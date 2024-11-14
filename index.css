@@ -207,7 +207,7 @@ background: var(--Schemes-On-Primary, #FFF);
 /* hero shadow */
 box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.20);
   }
-  .social-links-tabs svg{
+  .social-links-tabs img{
     height: 20px;
 flex: 1 0 0;
   }
