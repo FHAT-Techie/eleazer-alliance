@@ -523,7 +523,7 @@ height: 100%;
   justify-content: flex-end;
   align-items: flex-start;
   border-radius: 8px;
-  background: url(./image/networkingEvent.jpg) lightgray 50% / cover no-repeat;
+  background: url(./image/networkingEvent.webp) lightgray 50% / cover no-repeat;
   overflow: hidden;
 }
 
@@ -584,17 +584,17 @@ letter-spacing: 0.5px;
 }
 
 .youth-coaching-program{
-  background: url(./image/youth-coaching-program.jpg) lightgray 50% / cover no-repeat;
+  background: url(./image/youth-coaching-program.webp) lightgray 50% / cover no-repeat;
 }
 .entrepreneurs{
-  background: url(./image/entreprenueship.jpg) lightgray 50% / cover no-repeat;
+  background: url(./image/entreprenueship.webp) lightgray 50% / cover no-repeat;
 }
 .mentorship{
-  background: url(./image/mentorship.jpg) lightgray 50% / cover no-repeat;
+  background: url(./image/mentorship.webp) lightgray 50% / cover no-repeat;
 }
 .community{
-  background: url(./image/community-engagemen-program.jpg) lightgray 50% / cover no-repeat;
+  background: url(./image/community-engagemen-program.webp) lightgray 50% / cover no-repeat;
 }
 .skill{
-  background: url(./image/skill.jpg) lightgray 50% / cover no-repeat;
+  background: url(./image/skill.webp) lightgray 50% / cover no-repeat;
 }
