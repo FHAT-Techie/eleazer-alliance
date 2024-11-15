@@ -91,34 +91,45 @@ function HomePageToAboutUS() {
   });
 }
 
-function setupResponsiveTextToggle() {
-  const workItems = document.querySelectorAll('.our-work-item');
+function HomePagetoBlogPage() {
+  let toBlogPage = document.querySelectorAll(".toBlogPage");
 
-  workItems.forEach(item => {
-    const text = item.querySelector('.our-work-note p');
-
-    if (window.innerWidth > 768) { // Desktop view
-      item.addEventListener('mouseenter', () => {
-        text.style.display = 'block';
-      });
-
-      item.addEventListener('mouseleave', () => {
-        text.style.display = 'none';
-      });
-    } else { // Mobile view
-      item.addEventListener('click', () => {
-        // Toggle visibility on each click
-        text.style.display = text.style.display === 'block' ? 'none' : 'block';
-      });
-    }
+  toBlogPage.forEach((item) => {
+    item.addEventListener("click", () => {
+      window.location.href = "./Blog.html";
+    });
   });
 }
 
-setupResponsiveTextToggle();
+// function setupResponsiveTextToggle() {
+//   const workItems = document.querySelectorAll('.our-work-item');
 
-window.addEventListener('resize', setupResponsiveTextToggle);
+//   workItems.forEach(item => {
+//     const text = item.querySelector('.our-work-note p');
+
+//     if (window.innerWidth > 768) { // Desktop view
+//       item.addEventListener('mouseenter', () => {
+//         text.style.display = 'block';
+//       });
+
+//       item.addEventListener('mouseleave', () => {
+//         text.style.display = 'none';
+//       });
+//     } else { // Mobile view
+//       item.addEventListener('click', () => {
+//         // Toggle visibility on each click
+//         text.style.display = text.style.display === 'block' ? 'none' : 'block';
+//       });
+//     }
+//   });
+// }
+
+// setupResponsiveTextToggle();
+
+// window.addEventListener('resize', setupResponsiveTextToggle);
 
 HomePageToAboutUS();
 socialMediaLinking();
 sideBarFunction();
 primaryButton();
+HomePagetoBlogPage()
