@@ -435,11 +435,11 @@ font-size: 28px;
 }
 
 }
-@media (max-width :480px) {
+/* @media (max-width :480px) {
   .about-US button{
     width: 100%;
   }
-}
+} */
 
 
 /* Our Work Style */
@@ -470,7 +470,7 @@ font-size: 28px;
   gap: 8px;
   align-self: stretch;
   border-radius: 0px 0px 8px 8px;
-  background: var(--Color, rgba(255, 245, 238, 0.8));
+  background: var(--Color, rgba(255, 245, 238, 0.6));
 }
 
 .our-work-note h5,
@@ -487,7 +487,7 @@ font-size: 28px;
 }
 
 .our-work-note p {
-  display: none; /* Will be shown on hover/tap */
+  display: block; /* Will be shown on hover/tap */
   font-size: 16px;
   line-height: 24px; /* 150% */
   letter-spacing: 0.5px;
@@ -594,7 +594,7 @@ font-size: 28px;
     width: 100%;
   }
 
-  .our-work-item h1 {
+  .our-work-item h5 {
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 1;
