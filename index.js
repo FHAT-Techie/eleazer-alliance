@@ -284,4 +284,3 @@ document.getElementById("contactForm").addEventListener("submit", async (e) => {
     console.error(error);
   }
 });
-// bmpa zmzs azip xwhq

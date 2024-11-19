@@ -1,0 +1,303 @@
+.our-board-of-trustee{
+    display: flex;
+    padding: 32px 64px;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+    align-self: stretch;
+    
+}
+.our-board-of-trustee h1{
+    color: var(--brand-Black-Shade-1, #2C2C31);
+font-size: 45px;
+font-style: normal;
+font-weight: 300;
+line-height: 52px; /* 115.556% */
+text-align: center;
+}
+
+.board-of-trustee-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+    background: var(--Color, rgba(255, 245, 238, 0.2));
+    background: var(--Schemes-On-Primary, #FFF);
+
+    /* Hero shadow */
+    box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.20);
+
+    /* Set width to be flexible */
+    width: 100%;
+    max-width: 350px; /* Maximum width for larger screens */
+}
+.presidentImg{
+    height: 250px;
+align-self: stretch;
+border-radius: 4px 4px 0px 0px;
+background: url(./Our-Team-image/President.jpeg) lightgray 50% / cover no-repeat;
+object-fit: contain;
+}
+.our-board-description{
+    display: flex;
+padding: 8px 8px 16px 8px;
+flex-direction: column;
+align-items: start;
+gap: 4px;
+align-self: stretch;
+}
+.our-board-description h3{
+    color: #4E4E4E;
+text-align: start;
+font-size: 24px;
+font-style: normal;
+font-weight: 300;
+line-height: 32px; /* 133.333% */
+white-space: nowrap;
+overflow: hidden; 
+text-overflow: ellipsis;
+width: 100%;
+}
+.our-board-description h6{
+    color: #2E2E2E;
+    text-align: center;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 24px; /* 150% */
+    letter-spacing: 0.5px;
+}
+.our-board-description a i{
+    color: #2E2E2E;
+    cursor: pointer;
+    font-size: large;
+}
+.social-icon{
+    display: flex;
+    gap: 8px;
+}
+.board-of-trustee-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(288px, 1fr));
+    gap: 20px;
+    align-self: stretch;
+    justify-items: center;
+}
+.VP{
+    height: 250px;
+    align-self: stretch;
+    border-radius: 4px 4px 0px 0px;
+    object-fit: contain;
+    background: url(./Our-Team-image/VPpeg.jpeg) lightgray 50% / cover no-repeat;
+}
+.treasureImg{
+    height: 250px;
+    align-self: stretch;
+    border-radius: 4px 4px 0px 0px;
+    object-fit: contain;
+    background: url(./Our-Team-image/Treasurer.jpeg) lightgray 50% / cover no-repeat;
+}
+.secretaryImg{
+    height: 250px;
+    align-self: stretch;
+    border-radius: 4px 4px 0px 0px;
+    object-fit: contain;
+    background: url(./Our-Team-image/Gen-sec.jpeg) lightgray 50% / cover no-repeat;
+}
+.member1Img{
+    height: 250px;
+    align-self: stretch;
+    border-radius: 4px 4px 0px 0px;
+    object-fit: contain;
+    background: url(./Our-Team-image/member-1.jpeg) lightgray 50% / cover no-repeat;
+}
+
+
+@media (max-width:1120px) {
+    .our-board-of-trustee{
+        display: flex;
+padding: 32px;
+flex-direction: column;
+align-items: flex-start;
+gap: 32px;
+align-self: stretch;
+    }
+    .our-board-of-trustee h1{
+        font-size: 36px;
+        line-height: 44px; /* 122.222% */
+    }
+}
+@media (max-width:480px) {
+    .our-board-of-trustee{
+        display: flex;
+padding: 24px 16px;
+flex-direction: column;
+align-items: flex-start;
+gap: 24px;
+align-self: stretch;
+    }
+    .our-board-of-trustee h1{
+        font-size: 32px;
+        line-height: 40px; /* 122.222% */
+    }
+    .board-of-trustee-item{
+     width: 100%;
+    }
+    
+}
+.service-partners{
+    display: flex;
+padding: 32px 64px;
+flex-direction: column;
+align-items: center;
+gap: 32px;
+align-self: stretch;
+}
+.service-partners h1{
+    color: var(--brand-Black-Shade-1, #2C2C31);
+font-size: 45px;
+font-style: normal;
+font-weight: 300;
+line-height: 52px; /* 115.556% */
+}
+.service-partners p{
+    color: #000;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 24px; /* 150% */
+    letter-spacing: 0.5px; 
+}
+.partner-form{
+width: 100%;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+#service-partners-form{
+    display: flex;
+    gap: 16px;
+max-width: 1000px;
+padding: 35px 24px;
+flex-direction: column;
+align-items: flex-start;
+border-radius: 8px;
+background: var(--Schemes-Primary-Container, #E5DEFF);
+
+/* hero shadow */
+box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.20);
+}
+.input-set{
+    display: flex;
+flex-direction: column;
+align-items: flex-start;
+gap: 4px;
+align-self: stretch;
+}
+
+.service-in{
+    border: none;
+    display: flex;
+height: 40px;
+padding: 8px 16px;
+align-items: center;
+gap: 16px;
+align-self: stretch;
+border-radius: 8px;
+background: var(--brand-Brand-white, #F7F8FA);
+}
+.input-set textarea{
+    display: flex;
+    height: 163px;
+    padding: 16px;
+    align-items: flex-start;
+    gap: 16px;
+    align-self: stretch;
+    border-radius: 16px;
+    background: var(--brand-Brand-white, #F7F8FA);
+    border: none;
+}
+.input-set label, .input-set span{
+    color: var(--brand-Black-Shade-1, #2C2C31);
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px; /* 142.857% */
+    letter-spacing: 0.1px;
+}
+.agree{
+    display: flex;
+    color: var(--brand-Black-Shade-1, #2C2C31);
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px; /* 142.857% */
+    letter-spacing: 0.1px;
+    gap: 8px;
+}
+@media (max-width:1120px) {
+    .our-board-of-trustee{
+        align-items: center;
+    }
+    .service-partners{
+        display: flex;
+padding: 24px 32px;
+flex-direction: column;
+align-items: center;
+gap: 24px;
+justify-content: center;
+align-self: stretch;
+    }
+    .service-partners h1{
+font-size: 45px;
+line-height: 52px; /* 115.556% */
+    }
+
+    .service-partners-form{
+        width: 100%;
+    }
+}
+@media (max-width:480px) {
+    .service-partners{
+        display: flex;
+padding: 24px;
+flex-direction: column;
+align-items: center;
+gap: 16px;
+justify-content: center;
+align-self: stretch;
+    }
+    .service-partners h1{
+        font-size: 36px;
+        line-height: 44px; 
+         text-align:center;
+    }
+    .service-partners p{
+        font-size: 14px;
+        line-height: 20px; /* 142.857% */
+letter-spacing: 0.25px;
+
+    }
+
+    .service-partners-form{
+        width: 100%;
+    }
+}
+.formButton{
+    display: flex;
+  width: 100%;
+  padding: 8px 8px 8px 16px;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  border-radius: 100px;
+  background: var(--brand-Brand-Purple, #8C62FF);
+  color: #FFF;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 24px; /* 150% */
+  letter-spacing: 0.5px;
+  }
+  

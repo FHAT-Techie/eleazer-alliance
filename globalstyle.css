@@ -462,6 +462,7 @@ footer {
         rgba(0, 0, 0, 0.5) 100%
       ),
       url(./image/abt-landing.jpg) lightgray 1.413px -343.139px / 100% 400% no-repeat;
+      object-fit: contain;
   }
 
   .landingsection h1 {
