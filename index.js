@@ -248,7 +248,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   scrollTestimonials();
 });
-
 document.getElementById("contactForm").addEventListener("submit", async (e) => {
   e.preventDefault();
   const statusMessage = document.getElementById("statusMessage");
@@ -262,7 +261,7 @@ document.getElementById("contactForm").addEventListener("submit", async (e) => {
 
   try {
     // Send POST request to the backend
-    const response = await fetch("http://localhost:5000/send-email", {
+    const response = await fetch("https://ea-back.onrender.com/send-contact-email", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(formData),
@@ -271,14 +270,17 @@ document.getElementById("contactForm").addEventListener("submit", async (e) => {
     const result = await response.json();
 
     if (response.ok) {
+      // Success: Display success message and reset the form
       statusMessage.textContent = "Email sent successfully!";
       statusMessage.style.color = "green";
       document.getElementById("contactForm").reset();
     } else {
+      // Error response from the backend
       statusMessage.textContent = result.error || "Failed to send email.";
       statusMessage.style.color = "red";
     }
   } catch (error) {
+    // Network or other errors
     statusMessage.textContent = "An error occurred. Please try again.";
     statusMessage.style.color = "red";
     console.error(error);
