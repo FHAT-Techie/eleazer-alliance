@@ -286,3 +286,60 @@ document.getElementById("contactForm").addEventListener("submit", async (e) => {
     console.error(error);
   }
 });
+
+
+document.getElementById("service-partners-form").addEventListener("submit", async (e) => {
+  e.preventDefault(); // Prevent the default form submission behavior
+  
+  const statusMessage = document.getElementById("statusMessage");
+  statusMessage.textContent = "Submitting your information...";
+  statusMessage.style.color = "blue";
+
+  // Collect form data
+  const formData = {
+    partnerName: document.getElementById("partnerName").value,
+    partnerEmail: document.getElementById("partnerEmail").value,
+    partnerPhoneNumber: document.getElementById("partnerPhoneNumber").value,
+    partnerOrganizationName: document.getElementById("partnerOrganizationName").value,
+    partnerOrganizationWebsite: document.getElementById("partnerOrganizationWebsite").value,
+    partnerOrganizationType: document.querySelector('input[name="partnerOrganizationType"]:checked')?.value || null,
+    otherOrganizationType: document.getElementById("otherOrganizationType").value,
+    howWouldYouPartner: Array.from(
+      document.querySelectorAll('input[name="how-would-you-partner"]:checked')
+    ).map((input) => input.value), // Collect checked checkboxes
+    otherHowWouldYouPartner: document.getElementById("otherHowWouldYouPartner").value,
+    partnershipIdea: document.getElementById("partnershipIdea").value,
+    howDidYouHearAboutUs: document.getElementById("how-did-you-hear-about-us").value,
+    additionalCommentOrQuestion: document.getElementById("comment/question").value,
+    communicationAgreement: document.querySelector('input[name="communication-agreement"]').checked,
+  };
+
+  try {
+    // Send POST request to the backend
+    const response = await fetch("https://ea-back.onrender.com/send-partnership-email", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formData),
+    });
+
+    const result = await response.json();
+
+    if (response.ok) {
+      // Success response
+      statusMessage.textContent = "Your information was submitted successfully!";
+      statusMessage.style.color = "green";
+      document.getElementById("service-partners-form").reset(); // Reset form fields
+    } else {
+      // Backend error response
+      statusMessage.textContent = result.error || "Failed to submit your information. Please try again.";
+      statusMessage.style.color = "red";
+    }
+  } catch (error) {
+    // Network or other error
+    console.error("Error:", error);
+    statusMessage.textContent = "An error occurred. Please check your connection and try again.";
+    statusMessage.style.color = "red";
+  }
+});
