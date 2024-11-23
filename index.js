@@ -248,11 +248,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
   scrollTestimonials();
 });
+
+
+
+
+// Contact Form Submission
 document.getElementById("contactForm").addEventListener("submit", async (e) => {
   e.preventDefault();
   const statusMessage = document.getElementById("statusMessage");
 
-  // Collect form data
   const formData = {
     name: document.getElementById("name").value,
     email: document.getElementById("email").value,
@@ -260,53 +264,43 @@ document.getElementById("contactForm").addEventListener("submit", async (e) => {
   };
 
   try {
-    // Send POST request to the backend
     const response = await fetch("https://ea-back.onrender.com/send-contact-email", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(formData),
     });
-
     const result = await response.json();
 
     if (response.ok) {
-      // Success: Display success message and reset the form
-      statusMessage.textContent = "Email sent successfully!";
+      statusMessage.textContent = "Message sent successfully!";
       statusMessage.style.color = "green";
-      document.getElementById("contactForm").reset();
+      e.target.reset();
     } else {
-      // Error response from the backend
-      statusMessage.textContent = result.error || "Failed to send email.";
+      statusMessage.textContent = result.error || "Failed to send the message.";
       statusMessage.style.color = "red";
     }
   } catch (error) {
-    // Network or other errors
     statusMessage.textContent = "An error occurred. Please try again.";
     statusMessage.style.color = "red";
-    console.error(error);
   }
 });
 
-
+// Partnership Form Submission
 document.getElementById("service-partners-form").addEventListener("submit", async (e) => {
-  e.preventDefault(); // Prevent the default form submission behavior
-  
+  e.preventDefault();
   const statusMessage = document.getElementById("statusMessage");
-  statusMessage.textContent = "Submitting your information...";
-  statusMessage.style.color = "blue";
 
-  // Collect form data
   const formData = {
     partnerName: document.getElementById("partnerName").value,
     partnerEmail: document.getElementById("partnerEmail").value,
     partnerPhoneNumber: document.getElementById("partnerPhoneNumber").value,
     partnerOrganizationName: document.getElementById("partnerOrganizationName").value,
     partnerOrganizationWebsite: document.getElementById("partnerOrganizationWebsite").value,
-    partnerOrganizationType: document.querySelector('input[name="partnerOrganizationType"]:checked')?.value || null,
+    partnerOrganizationType: document.querySelector('input[name="partnerOrganizationType"]:checked')?.value,
     otherOrganizationType: document.getElementById("otherOrganizationType").value,
-    howWouldYouPartner: Array.from(
-      document.querySelectorAll('input[name="how-would-you-partner"]:checked')
-    ).map((input) => input.value), // Collect checked checkboxes
+    howWouldYouPartner: Array.from(document.querySelectorAll('input[name="how-would-you-partner"]:checked')).map(
+      (input) => input.value
+    ),
     otherHowWouldYouPartner: document.getElementById("otherHowWouldYouPartner").value,
     partnershipIdea: document.getElementById("partnershipIdea").value,
     howDidYouHearAboutUs: document.getElementById("how-did-you-hear-about-us").value,
@@ -315,31 +309,23 @@ document.getElementById("service-partners-form").addEventListener("submit", asyn
   };
 
   try {
-    // Send POST request to the backend
     const response = await fetch("https://ea-back.onrender.com/send-partnership-email", {
       method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
+      headers: { "Content-Type": "application/json" },
       body: JSON.stringify(formData),
     });
-
     const result = await response.json();
 
     if (response.ok) {
-      // Success response
-      statusMessage.textContent = "Your information was submitted successfully!";
+      statusMessage.textContent = "Partnership inquiry submitted successfully!";
       statusMessage.style.color = "green";
-      document.getElementById("service-partners-form").reset(); // Reset form fields
+      e.target.reset();
     } else {
-      // Backend error response
-      statusMessage.textContent = result.error || "Failed to submit your information. Please try again.";
+      statusMessage.textContent = result.error || "Failed to submit the inquiry.";
       statusMessage.style.color = "red";
     }
   } catch (error) {
-    // Network or other error
-    console.error("Error:", error);
-    statusMessage.textContent = "An error occurred. Please check your connection and try again.";
+    statusMessage.textContent = "An error occurred. Please try again.";
     statusMessage.style.color = "red";
   }
 });
