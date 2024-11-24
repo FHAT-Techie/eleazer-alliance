@@ -407,7 +407,7 @@
             </button>
 
             <!-- Status Message -->
-            <p id="statusMessage"></p>
+            <p id="partnershipStatus" class="status-message"></p>
           </form>
         </div>
       </section>
@@ -431,10 +431,14 @@
         </p>
       </footer>
     <script>
+const partnershipForm = document.getElementById("service-partners-form");
+const partnershipStatus = document.getElementById("partnershipStatus");
 
-document.getElementById("service-partners-form").addEventListener("submit", async (e) => {
+partnershipForm.addEventListener("submit", async (e) => {
   e.preventDefault();
-  const statusMessage = document.getElementById("statusMessage");
+
+  partnershipStatus.textContent = "Sending...";
+  partnershipStatus.style.color = "black"; // Contrasts with blue background
 
   const formData = {
     partnerName: document.getElementById("partnerName").value,
@@ -442,37 +446,35 @@ document.getElementById("service-partners-form").addEventListener("submit", asyn
     partnerPhoneNumber: document.getElementById("partnerPhoneNumber").value,
     partnerOrganizationName: document.getElementById("partnerOrganizationName").value,
     partnerOrganizationWebsite: document.getElementById("partnerOrganizationWebsite").value,
-    partnerOrganizationType: document.querySelector('input[name="partnerOrganizationType"]:checked')?.value,
+    partnerOrganizationType: document.querySelector("input[name='partnerOrganizationType']:checked")?.value || "",
     otherOrganizationType: document.getElementById("otherOrganizationType").value,
-    howWouldYouPartner: Array.from(document.querySelectorAll('input[name="how-would-you-partner"]:checked')).map(
-      (input) => input.value
-    ),
+    howWouldYouPartner: Array.from(document.querySelectorAll("input[name='how-would-you-partner']:checked")).map((input) => input.value),
     otherHowWouldYouPartner: document.getElementById("otherHowWouldYouPartner").value,
     partnershipIdea: document.getElementById("partnershipIdea").value,
     howDidYouHearAboutUs: document.getElementById("how-did-you-hear-about-us").value,
-    additionalCommentOrQuestion: document.getElementById("comment/question").value,
-    communicationAgreement: document.querySelector('input[name="communication-agreement"]').checked,
+    additionalCommentOrQuestion: document.querySelector("input[name='comment/question']").value,
+    communicationAgreement: document.querySelector("input[name='communication-agreement']").checked,
   };
 
   try {
     const response = await fetch("https://ea-back.onrender.com/send-partnership-email", {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
+      headers: {
+        "Content-Type": "application/json",
+      },
       body: JSON.stringify(formData),
     });
-    const result = await response.json();
 
     if (response.ok) {
-      statusMessage.textContent = "Partnership inquiry submitted successfully!";
-      statusMessage.style.color = "green";
-      e.target.reset();
+      partnershipStatus.textContent = "Form submitted successfully!";
+      partnershipStatus.style.color = "green";
+      partnershipForm.reset();
     } else {
-      statusMessage.textContent = result.error || "Failed to submit the inquiry.";
-      statusMessage.style.color = "red";
+      throw new Error("Failed to submit form.");
     }
   } catch (error) {
-    statusMessage.textContent = "An error occurred. Please try again.";
-    statusMessage.style.color = "red";
+    partnershipStatus.textContent = "Error: Could not submit form.";
+    partnershipStatus.style.color = "red";
   }
 });
 

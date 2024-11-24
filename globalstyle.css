@@ -470,3 +470,11 @@ footer {
     line-height: 44px;
   }
 }
+.status-message {
+  margin-top: 4px;
+  font-size: 12px;
+  font-weight: bold;
+
+}
+
+

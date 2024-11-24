@@ -252,11 +252,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-// Contact Form Submission
-document.getElementById("contactForm").addEventListener("submit", async (e) => {
-  e.preventDefault();
-  const statusMessage = document.getElementById("statusMessage");
+// Contact Form Submissionconst contactForm = document.getElementById("contactForm");
+const contactStatus = document.getElementById("contactStatus");
 
+contactForm.addEventListener("submit", async (e) => {
+  e.preventDefault();
+
+  contactStatus.textContent = "Sending...";
+  contactStatus.style.color = " #8c62ff;"; // Use a color that contrasts with the blue backgro
   const formData = {
     name: document.getElementById("name").value,
     email: document.getElementById("email").value,
@@ -266,23 +269,21 @@ document.getElementById("contactForm").addEventListener("submit", async (e) => {
   try {
     const response = await fetch("https://ea-back.onrender.com/send-contact-email", {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
+      headers: {
+        "Content-Type": "application/json",
+      },
       body: JSON.stringify(formData),
     });
-    const result = await response.json();
 
     if (response.ok) {
-      statusMessage.textContent = "Message sent successfully!";
-      statusMessage.style.color = "green";
-      e.target.reset();
+      contactStatus.textContent = "Message sent successfully!";
+      contactStatus.style.color = "green";
+      contactForm.reset();
     } else {
-      statusMessage.textContent = result.error || "Failed to send the message.";
-      statusMessage.style.color = "red";
+      throw new Error("Failed to send message.");
     }
   } catch (error) {
-    statusMessage.textContent = "An error occurred. Please try again.";
-    statusMessage.style.color = "red";
+    contactStatus.textContent = "Error: Could not send message.";
+    contactStatus.style.color = "red";
   }
 });
-
-// Partnership Form Submission
