@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Paystack Test</title>
+  <script src="https://js.paystack.co/v2/inline.js"></script>
+</head>
+<body>
+  <input type="number" id="donationAmount" placeholder="Amount">
+  <input type="text" id="donorName" placeholder="Name">
+  <input type="email" id="donorEmail" placeholder="Email">
+  <button id="donateNow">Donate Now</button>
+  
+  <script>
+    document.getElementById('donateNow').addEventListener('click', function () {
+      const handler = PaystackPop.setup({
+        key: 'your_paystack_public_key',
+        email: document.getElementById('donorEmail').value,
+        amount: document.getElementById('donationAmount').value * 100,
+        currency: 'NGN',
+        callback: function (response) {
+          alert('Success! Reference: ' + response.reference);
+        },
+        onClose: function () {
+          alert('Payment window closed.');
+        },
+      });
+      handler.openIframe();
+    });
+  </script>
+</body>
+</html>

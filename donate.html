@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Eleazar Alliance</title>
+    <link rel="stylesheet" href="globalstyle.css" />
+    <link rel="stylesheet" href="./Donate.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="./Icons/Eleazer-Alliance-Logo.svg"
+    />
+    <script src="https://js.paystack.co/v2/inline.js" defer></script>
+    <script src="./donate.js" defer></script>
+    <script src="./index.js" defer></script>
+
+  </head>
+  <body>
+    <header>
+      <div class="header">
+        <div class="navLogo">
+          <i class="fa-solid fa-bars"></i>
+          <a href="./index.html">
+            <img src="./Icons/Primary-logo.png" alt="Eleazer Alliance Logo"
+          /></a>
+        </div>
+
+        <div class="navItems">
+          <p><a href="./About-Us.html">About us</a></p>
+          <p><a href="./Get-Involved.html">Get Involved</a></p>
+          <p><a href="./Our-Team.html">Our Team</a></p>
+          <p><a href="./Blog.html">Blog</a></p>
+          <button class="primaryBTN">
+            Donate
+            <img src="./Icons/donateIcon.svg" alt="" />
+          </button>
+        </div>
+      </div>
+    </header>
+    <div class="mobile-sideBar">
+      <div class="sideBar-container">
+        <div class="sideBarLogo">
+          <i class="fa-solid fa-rectangle-xmark"></i>
+          <!-- <img src="./Icons/Eleazer-Alliance-Logo.svg" alt="" /> -->
+        </div>
+        <div class="side-Bar-Items">
+          <a href="./About-Us.html">About Us</a>
+          <a href="./Get-Involved.html">Get Involved</a>
+          <a href="./Our-Team.html">Our Team</a>
+          <a href="./Blog.html">Blog</a>
+        </div>
+      </div>
+    </div>
+    <main>
+      <section class="landingsection ourTeamLanding">
+        <h1>Donate and Fundraiser</h1>
+        <p>
+          At Eleazar Alliance Youth Empowerment Initiative, our team is
+          dedicated to unlocking the potential of young adults and building a
+          future rooted in financial independence and strong leadership. We
+          believe in the power of collaboration and are eager to partner with
+          organizations and individuals who share our passion for empowering
+          the next generation.
+        </p>
+      </section>
+      <main class="donateSection">
+        <h1>Donate</h1>
+        <p>
+          <span
+            >Your support is vital to our mission at Eleazar Alliance. By
+            contributing to our efforts, you are playing a crucial role in
+            transforming lives and empowering communities. Every donation, no
+            matter the size, helps us provide essential services, create
+            impactful programs, and extend our reach to those in need.</span
+          >
+          <span
+            >You can make a secure online donation by filling out the form
+            below. Choose the amount that works best for you and specify if you
+            would like it to be a one-time gift or a recurring
+            donation.</span
+          >
+        </p>
+
+        <div class="donateForm">
+          <form id="donationForm">
+            <div class="in-set">
+              <label for="donation-amount">Donation Amount</label>
+              <input type="number" name="donation-amount" id="donationAmount" required />
+            </div>
+            <div class="in-set">
+              <label for="donor-name">Full Name</label>
+              <input type="text" name="donor-name" id="donorName" required />
+            </div>
+            <div class="in-set">
+              <label for="donor-email">Email</label>
+              <input type="email" name="donor-email" id="donorEmail" required />
+            </div>
+            <div class="in-set">
+              <label for="donor-number">Phone Number (Optional):</label>
+              <input type="number" name="donor-number" id="donorPhone" />
+            </div>
+            <div class="in-set">
+              <label for="donor-message">Message (Optional):</label>
+              <textarea name="donor-message" id="donorMessage"></textarea>
+            </div>
+            <button type="button" id="donateNow">Donate Now</button>
+          </form>
+        </div>
+      </main>
+      <footer>
+        <img src="./Icons/white-logo.svg" alt="" />
+        <div class="footerNavItems">
+          <p><a href="./About-Us.html">About us</a></p>
+          <p><a href="./Get-Involved.html">Get Involved</a></p>
+          <p><a href="./Our-Team.html">Our Team</a></p>
+          <p><a href="./Blog.html">Blog</a></p>
+        </div>
+        <div class="social-media-footer">
+          <i class="fa-brands fa-tiktok tikTok"></i>
+          <i class="fa-brands fa-instagram instagram"></i>
+          <i class="fa-brands fa-linkedin linkedIn"></i>
+          <i class="fa-brands fa-youtube youTube"></i>
+          <i class="fa-brands fa-square-facebook facebook"></i>
+        </div>
+        <p class="copyright">
+          Copyright © 2024 Eleazar Alliance All rights reserved.
+        </p>
+      </footer>
+    </main>
+  </body>
+</html>
