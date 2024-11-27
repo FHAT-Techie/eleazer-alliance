@@ -49,6 +49,9 @@ function payWithPaystack() {
           if (data.message === 'Payment verified') {
             alert('Payment verified successfully!');
             console.log(data);
+
+            // Clear the form
+            document.getElementById('donationForm').reset();
           } else {
             alert('Payment verification failed.');
             console.error(data);
@@ -62,6 +65,9 @@ function payWithPaystack() {
     onClose: function () {
       console.log("Payment window closed");
       alert('Transaction was not completed.');
+
+      // Clear the form
+      document.getElementById('donationForm').reset();
     }
   });
 
