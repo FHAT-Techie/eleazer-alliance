@@ -435,182 +435,110 @@ font-size: 28px;
 }
 
 }
-/* @media (max-width :480px) {
-  .about-US button{
-    width: 100%;
-  }
-} */
 
-
-/* Our Work Style */
-.our-Work {
-  background-color: #efedfa;
+/* our work section */
+.our-Work{
   display: flex;
-  padding: 32px 64px;
-  flex-direction: column;
-  align-items: center;
-  gap: 32px;
-  align-self: stretch;
+padding: 32px 64px;
+flex-direction: column;
+align-items: center;
+gap: 32px;
+align-self: stretch;
+background-color: #efedfa;
 }
 
-.our-Work h1 {
+.our-Work h1{
   color: var(--brand-Black-Shade-1, #2C2C31);
-  font-size: 45px;
-  font-style: normal;
-  font-weight: 300;
-  line-height: 52px; /* 115.556% */
+font-size: 45px;
+font-style: normal;
+font-weight: 300;
+line-height: 52px; /* 115.556% */
 }
-
-.our-work-note {
-  width: 100%;
-  display: flex;
-  padding: 16px;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 8px;
-  align-self: stretch;
-  border-radius: 0px 0px 8px 8px;
-  background: var(--Color, rgba(255, 245, 238, 0.6));
+.our-work-note h5{
+ display: -webkit-box;
+ -webkit-box-orient: vertical;
+ -webkit-line-clamp: 1;
+ overflow: hidden;
+ text-overflow: ellipsis;
+  width: 100%;   
+font-size: 24px;
+font-style: normal;
+font-weight: 300;
+line-height: 32px; /* 133.333% */
 }
-
-.our-work-note h5,
-.our-work-note p {
-  color: var(--brand-Black-Shade-1);
-  font-style: normal;
-  font-weight: 300;
-}
-
-.our-work-note h5 {
-  font-size: 24px;
-  line-height: 32px; /* 133.333% */
-  align-self: stretch;
-}
-
-.our-work-note p {
-  display: block; /* Will be shown on hover/tap */
+.our-work-note p{
   font-size: 16px;
+  font-style: normal;
+  font-weight: 300;
   line-height: 24px; /* 150% */
   letter-spacing: 0.5px;
-  white-space: normal;
-  word-wrap: break-word;
 }
 
-.Our-Work-Content {
+.Our-Work-Content{
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
   gap: 20px;
-  align-self: stretch;
-  flex-wrap: wrap;
   width: 100%;
-  height: 100%;
 }
-
-.show-paragraph {
-  display: block;
-}
-
-.Our-Work-Content > div {
-  display: flex;
-  flex-direction: row;
-  width: 100%;
+.div {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 20px;
-  align-items: center;
-  justify-content: space-between;
-  overflow: hidden;
-  flex-wrap: nowrap;
+  width: 100%;
 }
 
 .our-work-item {
   display: flex;
-  width: calc(50% - 10px); /* Subtract half of the gap */
-  height: 300px;
   flex-direction: column;
   justify-content: flex-end;
-  align-items: flex-start;
+  align-items: flex-end;
   border-radius: 8px;
-  background: lightgray 50% / cover no-repeat;
+  background: lightgray center / cover no-repeat;
+  height: 300px;
   overflow: hidden;
+  background-color: #f5f5f5; /* Fallback for lazy loading */
 }
 
-.youth-coaching-program {
-  background-image: url(./image/youth-coaching-program.webp);
+.our-work-note {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  background: rgba(255, 245, 238, 0.6);
 }
-
-.entrepreneurs {
-  background-image: url(./image/entreprenueship.webp);
-}
-
-.mentorship {
-  background-image: url(./image/mentorship.webp);
-}
-
-.community {
-  background-image: url(./image/community-engagemen-program.webp);
-}
-
-.skill {
-  background-image: url(./image/skill.webp);
-}
-
-/* Media Queries */
 @media (max-width: 1120px) {
-  .our-Work {
-    padding: 32px 32px;
-  }
-
-  .our-Work h1 {
-    font-size: 36px;
-    line-height: 44px;
-  }
-
-  .our-work-item h1 {
-    font-size: 24px;
-    line-height: 32px;
-  }
-
-  .our-work-item p {
-    font-size: 16px;
-    line-height: 24px;
-    letter-spacing: 0.5px;
-  }
+.our-Work{
+  display: flex;
+padding: 32px;
+flex-direction: column;
+align-items: center;
+gap: 32px;
+align-self: stretch;
 }
-
-@media (max-width: 700px) {
-  .our-Work {
-    padding: 32px 16px;
+.our-Work h1{
+  font-size: 36px;
+font-style: normal;
+line-height: 44px; /* 122.222% */
+}
+}
+@media (max-width: 480px) {
+  .Our-Work-Content {
+    grid-template-columns: 1fr;
   }
-
-  .our-Work h1 {
+  .our-Work{
+    display: flex;
+padding: 24px 16px;
+flex-direction: column;
+align-items: center;
+gap: 24px;
+align-self: stretch;
+  }
+  .our-Work h1{
     font-size: 32px;
-    line-height: 40px;
-  }
 
-  .Our-Work-Content > div {
-    flex-direction: column;
-  }
-
-  .our-work-item {
-    width: 100%;
-  }
-
-  .our-work-item h5 {
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 1;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    font-size: 24px;
-    line-height: 32px;
-  }
-
-  .our-work-item p {
-    font-size: 16px;
-    line-height: 24px;
-    letter-spacing: 0.5px;
-    align-self: stretch;
   }
 }
+
 
 
 /* blog and event */

@@ -216,69 +216,63 @@
       <section class="our-Work">
         <h1>Our Work</h1>
         <div class="Our-Work-Content">
-          <div>
-            <div class="our-work-item youth-coaching-program">
-              <div class="our-work-note">
-                <h5>Youth Coaching Program</h5>
-                <p>
-                  We offer personalized coaching sessions aimed at empowering
-                  young adults with the skills and confidence needed to succeed.
-                </p>
-              </div>
-            </div>
-            <div class="our-work-item">
-              <div class="our-work-note">
-                <h5>Networking Event</h5>
-                <p>
-                  Connecting young adults with experienced mentors for guidance,
-                  support, and networking opportunities.
-                </p>
-              </div>
+          <div class="div">
+          <div class="our-work-item" data-src="./image/youth-coaching-program.webp">
+            <div class="our-work-note">
+              <h5>Youth Coaching Program</h5>
+              <p>
+                We offer personalized coaching sessions aimed at empowering young adults with the skills and confidence needed to succeed.
+              </p>
             </div>
           </div>
-          <div>
-            <div class="our-work-item entrepreneurs">
-              <div class="our-work-note">
-                <h5>Entrepreneurship Training</h5>
-                <p>
-                  Programs designed to nurture entrepreneurial skills, including
-                  business planning, marketing strategies, and startup support.
-                </p>
-              </div>
-            </div>
-            <div class="our-work-item mentorship">
-              <div class="our-work-note">
-                <h5>Mentorship Program</h5>
-                <p>
-                  Connecting young adults with experienced mentors for guidance,
-                  support, and networking opportunities.
-                </p>
-              </div>
+          <div class="our-work-item" data-src="./image/entreprenueship.webp">
+            <div class="our-work-note">
+              <h5>Entrepreneurship Training</h5>
+              <p>
+                Programs designed to nurture entrepreneurial skills, including business planning, marketing strategies, and startup support.
+              </p>
             </div>
           </div>
-          <div>
-            <div class="our-work-item community">
-              <div class="our-work-note">
-                <h5>Community Engagement Project</h5>
-                <p>
-                  Initiatives that encourage young adults to get involved in
-                  their communities and develop leadership skills.
-                </p>
-              </div>
+          </div>
+          <div class="div">
+          <div class="our-work-item" data-src="./image/mentorship.webp">
+            <div class="our-work-note">
+              <h5>Mentorship Program</h5>
+              <p>
+                Connecting young adults with experienced mentors for guidance, support, and networking opportunities.
+              </p>
             </div>
-            <div class="our-work-item skill">
-              <div class="our-work-note">
-                <h5>Skill Development Workshops</h5>
-                <p>
-                  Providing young adults with hands-on training and resources to
-                  build valuable skills, empowering them for career
-                  opportunities and personal growth..
-                </p>
-              </div>
+          </div>
+          <div class="our-work-item" data-src="./image/community-engagemen-program.webp">
+            <div class="our-work-note">
+              <h5>Community Engagement Project</h5>
+              <p>
+                Initiatives that encourage young adults to get involved in their communities and develop leadership skills.
+              </p>
+            </div>
+          </div>
+          </div>
+          <div class="div">
+          <div class="our-work-item" data-src="./image/skill.webp">
+            <div class="our-work-note">
+              <h5>Skill Development Workshops</h5>
+              <p>
+                Providing young adults with hands-on training and resources to build valuable skills, empowering them for career opportunities and personal growth.
+              </p>
+            </div>
+          </div>
+          <div class="our-work-item" data-src="./image/networkingEvent.webp">
+            <div class="our-work-note">
+              <h5>Networking Event</h5>
+              <p>
+                Connecting young adults with experienced mentors for guidance, support, and networking opportunities.
+              </p>
+            </div>
             </div>
           </div>
         </div>
       </section>
+      
       <section class="blog-and-event-section">
         <h1>Blog & Events</h1>
 
@@ -753,5 +747,28 @@
       </p>
     </footer>
     <script type="module" src="./index.js"></script>
+   <script>
+    document.addEventListener("DOMContentLoaded", () => {
+  const lazyLoadItems = document.querySelectorAll(".our-work-item");
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const item = entry.target;
+          const src = item.getAttribute("data-src");
+          if (src) {
+            item.style.backgroundImage = `url(${src})`;
+            item.removeAttribute("data-src");
+          }
+        }
+      });
+    },
+    { threshold: 0.1 }
+  );
+
+  lazyLoadItems.forEach((item) => observer.observe(item));
+});
+
+   </script>
   </body>
 </html>
