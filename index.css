@@ -500,6 +500,7 @@ line-height: 32px; /* 133.333% */
 }
 
 .our-work-note {
+  width: 100%;
   padding: 16px;
   display: flex;
   flex-direction: column;
